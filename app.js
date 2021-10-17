@@ -13,7 +13,12 @@ const fetchPokemon = () =>{
         Promise.all(pokemonPromises)//after all pokemon promises be done it will
         .then(pokemons => {
             const listPokemon = pokemons.reduce((accumulator, pokemon) => {// transforms a array into a string
-                accumulator += `<li>${pokemon.name}</li>`
+                accumulator += `
+                    <li class="card">
+                        <h2 class="card-title"> ${pokemon.id}.: ${pokemon.name}
+                        <p class="card-subtitle">${pokemon.types}
+                    </li>
+                `
                 return accumulator
             }, '')//after do the create a li with pokemon data it will be none
             console.log(listPokemon)
