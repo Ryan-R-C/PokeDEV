@@ -2,15 +2,18 @@ const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`//GETs API'
 //This function get the pokemon from the PokeApi
 
 const fetchPokemon = () =>{
-    
+    //instead of do a for it could be done using a previous array, and using map to do the hardwork
+    generatePokemonPromisses = () => Array(151).fill().map((_, index) => 
+        fetch(getPokemonUrl(index+1)).then(response => response.json())
+    )
 
-    const pokemonPromises = []//A array to storage the promises and show in the screen
-
+    const pokemonPromises = generatePokemonPromisses() //A array to storage the promises
+    /*OLD VERSION.:
     //Each pokemon needs its own request
     for(let i = 1; i <= 151; i++){
         pokemonPromises.push(fetch(getPokemonUrl(i))//modern method to do AJAX requests! -> .:. It gets data from the url. So returns a promise
         .then(response => response.json())//Change the response from HTTP to JSON. But it so returns a promise
-        )//storage the pokemon data in the array
+        )//storage the pokemon data in the array*/
         Promise.all(pokemonPromises)//after all pokemon promises be done it will
         .then(pokemons => {
             const listPokemon = pokemons.reduce((accumulator, pokemon) => {// transforms a array into a string
@@ -33,5 +36,5 @@ const fetchPokemon = () =>{
         )
 
     }
-} 
+
 fetchPokemon()
