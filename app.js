@@ -1,7 +1,8 @@
+const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`//GETs API's url
 //This function get the pokemon from the PokeApi
+
 const fetchPokemon = () =>{
     
-    const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`//GETs API's url
 
     const pokemonPromises = []//A array to storage the promises and show in the screen
 
