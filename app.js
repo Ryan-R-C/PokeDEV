@@ -13,10 +13,12 @@ const fetchPokemon = () =>{
         Promise.all(pokemonPromises)//after all pokemon promises be done it will
         .then(pokemons => {
             const listPokemon = pokemons.reduce((accumulator, pokemon) => {// transforms a array into a string
+                const types = pokemon.types.map(typeinfo => typeinfo.type.name)
                 accumulator += `
                     <li class="card">
+                        <img class="card-iamge ${types[0]}" alt"${pokemon.name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png">
                         <h2 class="card-title"> ${pokemon.id}.: ${pokemon.name}
-                        <p class="card-subtitle">${pokemon.types.map(typeinfo => typeinfo.type.name).join(" | ")}
+                        <p class="card-subtitle">${types.join(" | ")}
                     </li>
                 `
                 return accumulator
