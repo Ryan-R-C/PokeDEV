@@ -15,8 +15,8 @@ const fetchPokemon = () =>{
             const listPokemon = pokemons.reduce((accumulator, pokemon) => {// transforms a array into a string
                 const types = pokemon.types.map(typeinfo => typeinfo.type.name)
                 accumulator += `
-                    <li class="card">
-                        <img class="card-image ${types[0]}" alt"${pokemon.name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+                    <li class="card ${types[0]}">
+                        <img class="card-image" alt"${pokemon.name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
                         <h2 class="card-title"> ${pokemon.id}.: ${pokemon.name}
                         <p class="card-subtitle">${types.join(" | ")}
                     </li>
