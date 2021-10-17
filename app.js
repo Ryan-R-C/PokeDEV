@@ -16,14 +16,16 @@ const fetchPokemon = () =>{
                 const types = pokemon.types.map(typeinfo => typeinfo.type.name)
                 accumulator += `
                     <li class="card">
-                        <img class="card-iamge ${types[0]}" alt"${pokemon.name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+                        <img class="card-image ${types[0]}" alt"${pokemon.name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
                         <h2 class="card-title"> ${pokemon.id}.: ${pokemon.name}
                         <p class="card-subtitle">${types.join(" | ")}
                     </li>
                 `
                 return accumulator
             }, '')//after do the create a li with pokemon data it will be none
-            console.log(listPokemon)
+
+            const ul = document.querySelector('[data-js="pokedex"]')
+            ul.innerHTML = listPokemon
         },
 
         )
