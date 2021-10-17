@@ -16,7 +16,7 @@ const fetchPokemon = () =>{
                 accumulator += `
                     <li class="card">
                         <h2 class="card-title"> ${pokemon.id}.: ${pokemon.name}
-                        <p class="card-subtitle">${pokemon.types}
+                        <p class="card-subtitle">${pokemon.types.map(typeinfo => typeinfo.type.name).join(" | ")}
                     </li>
                 `
                 return accumulator
