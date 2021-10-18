@@ -1,29 +1,31 @@
 @import url('http://fonts.cdnfonts.com/css/pokemon-fire-red');                
 
 :root{
-	--top-and-bottom:#c6b28d; 
-	--content: #e8dac7;
+	--top-and-bottom: #C0B088 ; 
+	--content: #efe6d9;
 	--separator: #74643a;
+	--backgound: #e0d8c0;
 }
 
 body {
-	background: #EFEFBB;
-	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
-	color: white;
+	background-color: var(--backgound);
+	color: black;
 	margin: 0;
 	font-family: 'Pokemon Fire Red', rubrik ,sans-serif;
 }
-
 .container {
 	padding: 40px;
 	margin: 0 auto;
 }
 
+h1, h2, p{
+	margin: 0;
+}
 h1 {
 	text-align: center;
-	font-size: 54px;
+	font-size: 6rem;
+	margin-bottom: 40px;
 }
-
 .pokedex {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -38,19 +40,34 @@ h1 {
 	text-align: center;
 	border-radius: 20px;
 	position: relative;
+	background-color: var(--top-and-bottom);
 }
 
-.card::after {
+.separator{
+	background-color: var(--separator);
+	height: 4px;
+	margin-top: 10px;
+	width: 100%;
+}
+.card-content{
+	background-color: white;
+	border-radius: 20px;
+	box-sizing: border-box;
+	padding: .5rem 0;
+    position: relative;
+    transform: translateX(-20px);
+	width: calc(100% + 40px);
+}
+.card-circle {
 	content: "";
-  display: block;
-  width: 50%;
-  height: 45%;
-  border-radius: 100%;
-  background-color: #fff;
-  opacity: .7;
-  position: absolute;
-  top: 15%;
-  left: 25%;
+	display: block;
+	width: 50%;
+	height: 40%;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: .7;
+	position: absolute;
+	left: 25%;
 }
 
 .steel {

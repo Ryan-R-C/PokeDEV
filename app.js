@@ -5,10 +5,14 @@ const generateHTML = pokemons => pokemons.reduce((accumulator, { name, id, types
     const ElementTypes = types.map(typeinfo => typeinfo.type.name)//gets the type(s) of the pokemon, made it like this to save code
     //this accumulator will get all the pokemon data and interpolate it in HTML
     accumulator += `
-            <li class="card ${ElementTypes[0]}">
+            <li class="card">
+                <div class="card-circle ${ElementTypes[0]}"></div>
                 <img class="card-image" alt"${name} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png">
-                <h2 class="card-title"> ${id}.: ${name}
-                <p class="card-subtitle">${ElementTypes.join(" | ")}
+                <div class="card-content">
+                    <h2 class="card-title"> ${id}.: ${name}
+                    <div class="separator"></div>
+                    <p class="card-subtitle">${ElementTypes.join(" | ")}
+                </div>
             </li>
         `
     return accumulator
