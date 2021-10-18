@@ -1,9 +1,17 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-fire-red');                
+
+:root{
+	--top-and-bottom:#c6b28d; 
+	--content: #e8dac7;
+	--separator: #74643a;
+}
+
 body {
 	background: #EFEFBB;
 	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
 	color: white;
 	margin: 0;
-	font-family: rubik;
+	font-family: 'Pokemon Fire Red', rubrik ,sans-serif;
 }
 
 .container {
