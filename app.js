@@ -16,6 +16,11 @@ const generateHTML = pokemons => {
     }, '')
 }
 
+const insertPokemonsIntoPage = pokemons => {
+    const ul = document.querySelector('[data-js="pokedex"]')
+    ul.innerHTML = pokemons// add all content in the ul
+}
+
 const fetchPokemon = () =>{
     //instead of do a for it could be done using a previous array, and using map to do the hardwork
     generatePokemonPromisses = () => Array(151).fill().map((_, index) => 
@@ -31,12 +36,7 @@ const fetchPokemon = () =>{
         )//storage the pokemon data in the array*/
         Promise.all(pokemonPromises)//after all pokemon promises be done it will
         .then(generateHTML)//after do the create a li with pokemon data it will be none
-        .then(pokemons => {
-            const ul = document.querySelector('[data-js="pokedex"]')
-            ul.innerHTML = pokemons// add all content in the ul
-    },
-
-        )
+        .then(insertPokemonsIntoPage)
     
 }
 fetchPokemon()
