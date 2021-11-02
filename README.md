@@ -1,5 +1,7 @@
 # `PokeDEV`
 
+![PokeDev - Wide](https://i.ibb.co/zZ2xY7M/pokedev.jpg)
+
 ## This application consumes external API (pokeAPI) using just JavaScript
 
 ### In this project:
